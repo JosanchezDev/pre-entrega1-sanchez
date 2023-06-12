@@ -181,15 +181,16 @@ hr{
    .button-link{
     display: inline-block;
   padding: 12px 24px;
-  background-color: #4287f5;
+  background: lighten($color: #000000, $amount: 25);
   color: #fff;
   text-decoration: none;
   font-size: 14px;
   border-radius: 4px;
   font-family: inherit;
+  transition: all 0.4a ease;
    }
    .button-link:hover {
-    background-color: #B8D7FF;
+    background-color: #f3b542;
   }
   
   .button-link:active {

@@ -8,7 +8,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { db } from '../services/firebase/firebaseConfig';
+import { db } from "../services/firebase/firebaseConfig";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./ItemDetail.scss";
@@ -23,18 +23,6 @@ const ItemDetail = () => {
   const [decrement, setDecrement]=useState(0); */
   const [hidden, setHidden] = useState(false);
   const [quantity, setQuantity] = useState(0);
-  //console.log("ITEMID=" + itemid);
-  /* useEffect(() => {
-    axios
-      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${itemid}`)
-      .then((res) => {
-        console.log("INICIAL:", res.data.meals);
-        setDetail(res.data.meals);
-        console.log("detail=" + detail);
-      });
-  }, []); */
-
-  
 
   useEffect(() => {
     const docRef = doc(db, "category", `${itemid}`);
@@ -62,16 +50,16 @@ const ItemDetail = () => {
   const handOnAdd = () => {
     if ((quantity) => 0) {
       setHidden(true);
-      
-      const item={
-        id:detail.idMeal,
-        name:detail.strMeal,
-        price:detail.price,
-        category:detail.categoriesId,
-        count:quantity,
-        thumb:detail.strMealThumb
-      }
-      addItem(item,quantity);
+
+      const item = {
+        id: detail.idMeal,
+        name: detail.strMeal,
+        price: detail.price,
+        category: detail.categoriesId,
+        count: quantity,
+        thumb: detail.strMealThumb,
+      };
+      addItem(item, quantity);
       amountAll(detail.price);
     } else {
       setHidden(false);
@@ -98,20 +86,26 @@ const ItemDetail = () => {
             <h4>Categoria:{detail.categoriesId}</h4>
             <h4>Descripcion:{detail.strMeal}</h4>
             <h4>Precio:{detail.price}</h4>
-            <Link to="/cart" className="option">
+            <Link to="/cart" className="button-link">
               Terminar
             </Link>
           </div>
         ) : (
-          <div>
+          <div className="button-container">
             <button onClick={handOnAdd}>Adicionar al Carrito</button>
             <button className="action" onClick={decrement}>
-              Decrement
+              -
             </button>
             <h4 className="action">{quantity}</h4>
             <button className="action" onClick={increment}>
-              Increment
+              +
             </button>
+            {/* <div className="button-container">
+              <button>Button 1</button>
+              <button>Button 2</button>
+              <button>Button 3</button>
+            </div> */}
+            
           </div>
         )}
 
