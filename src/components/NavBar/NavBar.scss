@@ -1,4 +1,5 @@
 .navbar{
+    text-decoration: none;
     width: 100%;
     height: 10vh;
     background: #000;
@@ -15,15 +16,18 @@
 
     &-heading{
         h1{
-
+            text-decoration: none;    
             color: #fff;
             margin-left: 20px;
             font-size: 30px;
+            padding-left: 15px;
             span{
+                text-decoration: none;
                 color: #f3b542
             }
-            text-decoration: none;
+            
             &:hover{
+                text-decoration: none;
                 color: #fff;
             }
         }
@@ -38,7 +42,7 @@
         a{
             color: #fff;
             text-decoration: none;
-            margin: 0px 10px;
+            margin: 0px 8px;
             padding: 10px;
             background: lighten($color: #000000, $amount: 25);
             border-radius: 5px;
@@ -50,7 +54,32 @@
             }
 
         }
+        img{
+            
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            margin-left: 5px;
+            border-radius: 100%;
+            top: 15px;
+            right: 20px;
+            
+            
+            
+        }
+        h3{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgb(255, 255, 255);
+            border-radius:  60%;
+            color: #000;
+            padding: 2px 6px;
+            transition: 0.3s all ease;
+            font-family: sans-serif;
+            font-size: 15px;
+        }
     }
 
-    ;
+    
 }

@@ -1,27 +1,14 @@
+import React, { useContext, useEffect, useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 /*import "../style.css";*/
 import { Link } from "react-router-dom";
-import './NavBar.scss'
+import './NavBar.scss';
+import cart  from './cart.png'
+import { CartContext } from "../context/CartContext";
 const NavBar = () => {
-  return (
-    /* <nav>
-      <h2 style={{ textAlign: "center" }}>e-Commerce</h2>
-      <div style={{ background: "#444444", textAlign: "left" }}>
-        <ul className="list">
-          <li>Inicio</li>
-          <li>Acerca</li>
-          <li>Blog</li>
-          <li>Contactos</li>
-         
-        </ul>
-      </div>
-      <div className="cart">
-            <CartWidget />
-            <h3>0</h3>
-          </div>
-          
-    </nav> */
 
+  const { total } = useContext(CartContext);
+  return (
     <div className="navbar">
         <div className="navbar-heading">
         <Link to="/"><h1>Gustosito <span>App</span></h1></Link>
@@ -29,14 +16,11 @@ const NavBar = () => {
         <div className="navbar-links">
           <ul>
             <Link to="/"><li>Inicio</li></Link>
-            <Link to="/productos"><li>Productos</li></Link>
-            <Link to="/categories"><li>Categories</li></Link>
-            
-            
-          
-          {/* <li>Categorias</li>
-          <li>Blog</li>
-          <li>Contactos</li> */}
+            <Link to="/categories"><li>Categorias</li></Link>
+            <Link to="/cart"><li>Mis Compras</li></Link>
+            <li><img src={cart} alt="cart-widget"/>
+            <h3>{total}</h3>
+            </li>
           </ul>
         </div>
     </div>

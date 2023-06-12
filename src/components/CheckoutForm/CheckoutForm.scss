@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.CheckoutForm{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #949699, #FAFCFF);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        .container{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 500px;
+        .col2{
+            input{
+            display: block;
+            width: 260px;
+            height: 30px;
+            padding-left: 10px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            margin: 7px;
+            font-size: 17px;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.05);
+            border: none;
+            transition: background 0.5s;
+            &:focus{
+                outline-width: 0;
+                background: rgba(31,134,252, 0.15);
+                transition: background 0.5s;
+            }
+            }
+            
+            label{
+            padding-left: 8px;
+            font-size: 15px;
+            color: #444;
+            }
+            
+            .ccv{
+            width: 40%;
+            }
+            
+            .buy{
+            width: 260px;
+            height: 50px;
+            position: relative;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: none;
+            background: #4287f5;
+            color: white;
+            font-size: 20px;
+            transition: background 0.4s;
+            cursor: pointer;
+            i{
+                font-size: 20px;
+            }
+            &:hover{
+                background: #5c9ff7;
+                transition: background 0.4s;
+            }
+            }
+        }
+        
+        }
+}

@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: column;
 
+
     /* border-radius: 5px;
     outline: none; */
 
@@ -21,21 +22,32 @@
         
 
         .ItemCategories-categories {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
             text-align: center;
+            padding: 20px;
+
             
 
         }
 
         img{
-            width: 250px;
+            width: 280px;
             /* height: 200px; */
             border: 1px solid #ccc;
-            margin: 15px;
+            padding: 1px;
             transition: all 0.4s ease;
             border-radius: 5px;
 
             &:hover{
                 transform: scale(1.1);
+            }
+            h4{
+                padding: 0px;
+            }
+            button{
+                padding: 0px;        
             }
 
         }
